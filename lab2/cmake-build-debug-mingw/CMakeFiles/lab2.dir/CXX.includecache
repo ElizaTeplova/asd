@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/textbooks/labs/asd/practice/lab2/Matrix/BigMatrix.h
+cmath
+-
+iostream
+-
+
+C:/textbooks/labs/asd/practice/lab2/Matrix/Matrix.h
+iostream
+-
+iomanip
+-
+
+C:/textbooks/labs/asd/practice/lab2/main.cpp
+iostream
+-
+ctime
+-
+Matrix/Matrix.h
+C:/textbooks/labs/asd/practice/lab2/Matrix/Matrix.h
+Matrix/BigMatrix.h
+C:/textbooks/labs/asd/practice/lab2/Matrix/BigMatrix.h
+
