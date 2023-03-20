@@ -4,13 +4,16 @@
 
 #ifndef LAB3_SORTER_H
 #define LAB3_SORTER_H
-
+const int arrSize = 1000000;
 
 class Sorter {
 private:
 
     template<typename T>
     static void merge(T *a, int left, int mid, int right) {
+        if (right >= arrSize) {
+            right = arrSize - 1;
+        }
         int sizeLeftArray = mid - left + 1;
         int sizeRightArray = right - mid;
         int indexLeftArray, indexRightArray, indexMergedArray;
@@ -18,13 +21,16 @@ private:
         T *arrayLeft = new T[sizeLeftArray];
         T *arrayRight = new T[sizeRightArray];
 
+
+
         for (i = 0; i < sizeLeftArray; i++) {
             arrayLeft[i] = a[left + i];
         }
         for (j = 0; j < sizeRightArray; j++) {
+//            arrayRight[j] = a[mid + 1 + j];
             arrayRight[j] = a[mid + 1 + j];
         }
-//        std::cout << "left: " << left << " right: " << right << std::endl;
+//        std::cout << "left: " << left << " mid: " << mid <<" right: " << right << std::endl;
 
         indexLeftArray = 0;
         indexRightArray = 0;
@@ -51,7 +57,7 @@ private:
             indexMergedArray++;
         }
 
-        while (indexLeftArray < sizeRightArray) {
+        while (indexLeftArray < sizeLeftArray) {
             a[indexMergedArray] = arrayLeft[indexLeftArray];
             indexLeftArray++;
             indexMergedArray++;
@@ -81,8 +87,6 @@ public:
 
 
 
-
-
     template<typename T>
     static void printArr(const std::string &messege, T *a, int size) {
         int i = 0;
@@ -101,7 +105,7 @@ public:
 
         std::cout << messege << std::endl;
         for (i = low; i < high; i++) {
-            std::cout << a[i] << " ";
+            std::cout << a[i] << std::endl;
         }
         std::cout << std::endl;
     }

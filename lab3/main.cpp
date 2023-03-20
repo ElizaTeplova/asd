@@ -1,22 +1,41 @@
 #include <iostream>
+#include <chrono>
 #include "Sorters/Sorter.h"
+#include "PDT/PDTTestObject.h"
+
+
 
 int main() {
 //    std::cout << "Hello, World!" << std::endl;
-    const int arrSize = 9;
+
     int i = 0;
-    int intArr[arrSize] = {9, 12, 5, 7, 6, 9, 1, 2, 3};
+//    int intArr[arrSize] = {9, 12, 5, 7, 6, 9, 1, 2, 3};
+//
+//    double * intPtrArr = new double [arrSize];
+//    for (i = 0; i < arrSize; i++) {
+//        intPtrArr[i] = std::rand() % 5000;
+//    }
 
-    int* intPtrArr = new int[arrSize];
-    for (i = 0; i < arrSize; i++) {
-        intPtrArr[i] = intArr[i];
-    }
+    PDTTestObject *object = new PDTTestObject[arrSize]();
+    std::cout << "sorting..." << std::endl;
+    auto start = std::chrono::system_clock::now();
+    Sorter::mergeSort<PDTTestObject>(object, 0, arrSize);
+//    Sorter::mergeSort<double>(intPtrArr, 0, arrSize);
+    auto end = std::chrono::system_clock::now();
+    std::chrono::duration<double> elapsed_seconds = end - start;
+    std::cout.precision(5);
+    std::cout << std::setw(7) << arrSize << "   " << std::setw(10) << elapsed_seconds.count() << std::endl;
 
-    Sorter::mergeSort<int>(intPtrArr, 0, arrSize);
+//    for (i = 0; i < arrSize; i++) {
+//        std::cout << object[i] << std::endl;
+//    }
 
-    Sorter::printArr<int>("", intPtrArr, arrSize);
+    delete[] object;
+//    Sorter::mergeSort<int>(intPtrArr, 0, arrSize);
+//
+//    Sorter::printArr<int>("", intPtrArr, arrSize);
 
-    delete[] intPtrArr;
+//    delete[] intPtrArr;
 
     return 0;
 }

@@ -80,6 +80,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/textbooks/labs/asd/practice/lab3/PDT/PDTTestObject.h">
+			<Option target="lab3"/>
+		</Unit>
 		<Unit filename="C:/textbooks/labs/asd/practice/lab3/Sorters/Sorter.h">
 			<Option target="lab3"/>
 		</Unit>

@@ -6,11 +6,23 @@
 
 #IncludeRegexTransform: 
 
+C:/textbooks/labs/asd/practice/lab3/PDT/PDTTestObject.h
+ostream
+-
+iostream
+-
+iomanip
+-
+
 C:/textbooks/labs/asd/practice/lab3/Sorters/Sorter.h
 
 C:/textbooks/labs/asd/practice/lab3/main.cpp
 iostream
 -
+chrono
+-
 Sorters/Sorter.h
 C:/textbooks/labs/asd/practice/lab3/Sorters/Sorter.h
+PDT/PDTTestObject.h
+C:/textbooks/labs/asd/practice/lab3/PDT/PDTTestObject.h
 
