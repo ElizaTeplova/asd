@@ -1,0 +1,3 @@
+C:/textbooks/labs/asd/practice/lab3/cmake-build-debug-mingw/CMakeFiles/rebuild_cache.dir
+C:/textbooks/labs/asd/practice/lab3/cmake-build-debug-mingw/CMakeFiles/lab3.dir
+C:/textbooks/labs/asd/practice/lab3/cmake-build-debug-mingw/CMakeFiles/edit_cache.dir

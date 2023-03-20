@@ -112,7 +112,7 @@ private:
     }
 
     void multipleMatrix(double **matrix, int row, double k) {
-        std::cout << "k: " << k << std::endl;
+//        std::cout << "k: " << k << std::endl;
         for (int j = 0; j < sizeMatrix; j++) {
             matrix[row][j] *= k;
         }
@@ -182,7 +182,7 @@ public:
     BigMatrix(T **matrix, int size) {
         int i = 0, j = 0;
         sizeMatrix = size;
-        std::cout << "Matrix size: " << sizeMatrix << std::endl;
+//        std::cout << "Matrix size: " << sizeMatrix << std::endl;
         this->a = (T **) new T *[sizeMatrix];
 
 
@@ -232,7 +232,7 @@ public:
         multipleMatrix(rightMatrix, 0, denomenator);
         cloneMatrix[0][0] = 1;
 //        print2DArray("rightMatrix: ", rightMatrix, sizeMatrix);
-        printTwoArrays("", cloneMatrix, rightMatrix, sizeMatrix);
+//        printTwoArrays("", cloneMatrix, rightMatrix, sizeMatrix);
 
         for (j = 0; j < sizeMatrix - 1; j++) {
             for (i = j + 1; i < sizeMatrix; i++) {
@@ -241,7 +241,7 @@ public:
                 }
 
                 factor = cloneMatrix[i][j] / cloneMatrix[j][j];
-                std::cout << "i: " << i << " | j: " << j << " | factor: " << factor << std::endl;
+//                std::cout << "i: " << i << " | j: " << j << " | factor: " << factor << std::endl;
 //                actions with clone matrix:
                 multipleMatrix(cloneMatrix, i, 1 / factor);
 
@@ -251,11 +251,11 @@ public:
                     cloneMatrix[i][k] -= cloneMatrix[j][k];
                     rightMatrix[i][k] -= rightMatrix[j][k];
                 }
-                std::cout << "--------------------------------------" << std::endl;
-                std::cout << "--------------------------------------" << std::endl;
+//                std::cout << "--------------------------------------" << std::endl;
+//                std::cout << "--------------------------------------" << std::endl;
 //                print2DArray("cloneMatrix: ", cloneMatrix, sizeMatrix);
 //                print2DArray("rightMatrix: ", rightMatrix, sizeMatrix);
-                printTwoArrays("", cloneMatrix, rightMatrix, sizeMatrix);
+//                printTwoArrays("", cloneMatrix, rightMatrix, sizeMatrix);
             }
 
             multipleMatrix(cloneMatrix, j + 1, 1 / cloneMatrix[j + 1][j + 1]);
@@ -263,9 +263,9 @@ public:
 
 //            print2DArray("cloneMatrix: ", cloneMatrix, sizeMatrix);
 //            print2DArray("rightMatrix: ", rightMatrix, sizeMatrix);
-            printTwoArrays("", cloneMatrix, rightMatrix, sizeMatrix);
-            std::cout << "--------------------------------------" << std::endl;
-            std::cout << "--------------------------------------" << std::endl;
+//            printTwoArrays("", cloneMatrix, rightMatrix, sizeMatrix);
+//            std::cout << "--------------------------------------" << std::endl;
+//            std::cout << "--------------------------------------" << std::endl;
         }
 
 
@@ -274,12 +274,12 @@ public:
                 cloneMatrix[i][j] = 0;
             }
         }
-        std::cout << "--------------------------------------" << std::endl;
-        std::cout << "--------------------------------------" << std::endl;
-        printTwoArrays("", cloneMatrix, rightMatrix, sizeMatrix);
+//        std::cout << "--------------------------------------" << std::endl;
+//        std::cout << "--------------------------------------" << std::endl;
+//        printTwoArrays("", cloneMatrix, rightMatrix, sizeMatrix);
 //        print2DArray("cloneMatrix: ", cloneMatrix, sizeMatrix);
 //        print2DArray("rightMatrix: ", rightMatrix, sizeMatrix);
-        std::cout << "Above main diagonal: " << std::endl;
+//        std::cout << "Above main diagonal: " << std::endl;
 
         for (j = 1; j < sizeMatrix; j++) {
             for (i = 0; i < j; i++) {
@@ -289,17 +289,17 @@ public:
                     cloneMatrix[i][k] -= cloneMatrix[j][k] * factor;
                     rightMatrix[i][k] -= rightMatrix[j][k] * factor;
                 }
-                std::cout << "j: " << j << std::endl;
-                printTwoArrays("", cloneMatrix, rightMatrix, sizeMatrix);
+//                std::cout << "j: " << j << std::endl;
+//                printTwoArrays("", cloneMatrix, rightMatrix, sizeMatrix);
 //                print2DArray("cloneMatrix: ", cloneMatrix, sizeMatrix);
 //                print2DArray("rightMatrix: ", rightMatrix, sizeMatrix);
-                std::cout << "--------------------------------------" << std::endl;
-                std::cout << "--------------------------------------" << std::endl;
+//                std::cout << "--------------------------------------" << std::endl;
+//                std::cout << "--------------------------------------" << std::endl;
             }
         }
 
 
-        print2DArray("right matrix: ", rightMatrix, sizeMatrix);
+//        print2DArray("right matrix: ", rightMatrix, sizeMatrix);
 
         for (i = 0; i < sizeMatrix; i++) {
             delete[] rightMatrix[i];
