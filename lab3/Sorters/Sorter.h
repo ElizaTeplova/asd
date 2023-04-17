@@ -4,7 +4,8 @@
 
 #ifndef LAB3_SORTER_H
 #define LAB3_SORTER_H
-const int arrSize = 1000000;
+#include <cmath>
+const int arrSize = 8;
 
 class Sorter {
 private:
@@ -20,7 +21,6 @@ private:
         int i = 0, j = 0;
         T *arrayLeft = new T[sizeLeftArray];
         T *arrayRight = new T[sizeRightArray];
-
 
 
         for (i = 0; i < sizeLeftArray; i++) {
@@ -41,7 +41,7 @@ private:
         while (indexRightArray < sizeRightArray &&
                indexLeftArray < sizeLeftArray) {
 
-            if (arrayLeft[indexLeftArray] <= arrayRight[indexRightArray]) {
+            if (arrayLeft[indexLeftArray] >= arrayRight[indexRightArray]) {
                 a[indexMergedArray] = arrayLeft[indexLeftArray];
                 indexLeftArray++;
             } else {
@@ -78,14 +78,30 @@ public:
 
         int mid = begin + (end - begin) / 2;
 //            printArrWithBound("mergeSort: ", a, begin, mid);
-            mergeSort(a, begin, mid);
+        mergeSort(a, begin, mid);
 //            printArrWithBound("mergeSort: ", a, mid + 1, end);
-            mergeSort(a, mid + 1, end);
+        mergeSort(a, mid + 1, end);
 //            printArrWithBound("merge: ", a, begin, end);
-            merge<T>(a, begin, mid, end);
+        merge<T>(a, begin, mid, end);
     }
 
+    template<typename T>
+    static void shellSort(T *a, int size) {
+        T temp;
+        int gap = 0, i = 0, j = 0;
+        printArr("start:", a, size);
+        for (gap = size / 2; gap > 0; gap /= 2) {
+            for (i = gap; i < size; i++) {
+                temp = a[i];
 
+                for (j = i; j >= gap && a[j - gap] > temp; j-=gap) {
+                    a[j] = a[j - gap];
+                }
+                a[j] = temp;
+            }
+            printArr("a:", a, size);
+        }
+    }
 
     template<typename T>
     static void printArr(const std::string &messege, T *a, int size) {
@@ -105,7 +121,7 @@ public:
 
         std::cout << messege << std::endl;
         for (i = low; i < high; i++) {
-            std::cout << a[i] << std::endl;
+            std::cout << a[i] << " "; //<< std::endl;
         }
         std::cout << std::endl;
     }

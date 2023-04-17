@@ -15,6 +15,22 @@ iomanip
 -
 
 C:/textbooks/labs/asd/practice/lab3/Sorters/Sorter.h
+cmath
+-
+
+C:/textbooks/labs/asd/practice/lab3/Sorters/TournamentSort.h
+iostream
+-
+vector
+-
+limits
+-
+Sorter.h
+C:/textbooks/labs/asd/practice/lab3/Sorters/Sorter.h
+cmath
+-
+algorithm
+-
 
 C:/textbooks/labs/asd/practice/lab3/main.cpp
 iostream
@@ -25,4 +41,6 @@ Sorters/Sorter.h
 C:/textbooks/labs/asd/practice/lab3/Sorters/Sorter.h
 PDT/PDTTestObject.h
 C:/textbooks/labs/asd/practice/lab3/PDT/PDTTestObject.h
+Sorters/TournamentSort.h
+C:/textbooks/labs/asd/practice/lab3/Sorters/TournamentSort.h
 

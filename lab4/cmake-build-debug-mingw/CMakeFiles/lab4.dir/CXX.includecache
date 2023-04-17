@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/textbooks/labs/asd/practice/lab4/PDT/PDTTestObject.h
+ostream
+-
+iostream
+-
+iomanip
+-
+
+C:/textbooks/labs/asd/practice/lab4/Utils/Search.h
+iostream
+-
+
+C:/textbooks/labs/asd/practice/lab4/Utils/Sorter.h
+
+C:/textbooks/labs/asd/practice/lab4/main.cpp
+iostream
+-
+chrono
+-
+PDT/PDTTestObject.h
+C:/textbooks/labs/asd/practice/lab4/PDT/PDTTestObject.h
+Utils/Sorter.h
+C:/textbooks/labs/asd/practice/lab4/Utils/Sorter.h
+Utils/Search.h
+C:/textbooks/labs/asd/practice/lab4/Utils/Search.h
+vector
+-
+
